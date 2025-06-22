@@ -1,7 +1,7 @@
 aws_region = "us-east-1"
 common_variables = {
-  Environment = "development"
-  ApplicationName = "eks-infra"
+  environment = "development"
+  application_name = "eks-infra"
   common_tags = {
     Environment = "development"
     ApplicationName = "eks-infra"
