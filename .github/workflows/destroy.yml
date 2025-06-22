@@ -6,7 +6,6 @@ on:
       environment:
         description: 'Environment to deploy (e.g., development, production)'
         required: true
-        default: 'development'
 
 jobs:
   plan:
