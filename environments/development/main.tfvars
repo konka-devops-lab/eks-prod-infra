@@ -1,3 +1,4 @@
+aws_region = "us-east-1"
 common_variables = {
   Environment = "development"
   ApplicationName = "eks-infra"
@@ -6,6 +7,7 @@ common_variables = {
     ApplicationName = "eks-infra"
     Owner = "konkas"
     Terraform = "true"
+  }
 }
 vpc = {
     vpc_cidr_block = "10.1.0.0/16"

@@ -1,3 +1,7 @@
+variable "aws_region" {
+  description = "AWS region to deploy resources"
+  type        = string
+}
 variable "common_variables" {
   description = "Common variables for the infrastructure"
   type = map(any)
