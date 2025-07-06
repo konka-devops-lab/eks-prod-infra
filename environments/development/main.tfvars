@@ -1,10 +1,10 @@
 aws_region = "us-east-1"
 common_variables = {
-  environment = "development"
-  application_name = "eks-infra"
+  environment = "dev"
+  application_name = "eks"
   common_tags = {
     Environment = "development"
-    ApplicationName = "eks-infra"
+    ApplicationName = "eks"
     Owner = "konkas"
     Terraform = "true"
   }

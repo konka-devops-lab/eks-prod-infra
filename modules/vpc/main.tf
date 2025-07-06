@@ -41,6 +41,8 @@ resource "aws_subnet" "public_subnets" {
     var.common_tags,
     {
       Name = "${local.common_name}-public-subnet-${split("-",var.availability_zone[count.index])[2]}"
+      "kubernetes.io/role/elb"                 = "1"
+      "kubernetes.io/cluster/${var.environment}-${var.application_name}" = "shared"
     }
   )
 }
@@ -55,6 +57,8 @@ resource "aws_subnet" "private_subnets" {
     var.common_tags,
     {
       Name = "${local.common_name}-private-subnet-${split("-",var.availability_zone[count.index])[2]}"
+      "kubernetes.io/role/internal-elb"        = "1"
+      "kubernetes.io/cluster/${var.environment}-${var.application_name}" = "shared"
     }
   )
 }
