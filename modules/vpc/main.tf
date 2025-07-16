@@ -12,6 +12,7 @@ resource "aws_vpc" "main" {
     var.common_tags,
     {
       Name = "${local.common_name}-vpc"
+      "kubernetes.io/cluster/${var.environment}-${var.application_name}" = "shared"
     }
   )
 }
