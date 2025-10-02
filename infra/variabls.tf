@@ -5,5 +5,4 @@ variable "aws_region" {
 variable "common_vars" {}
 variable "vpc" {}
 variable "sg" {}
-variable "lb_acm" {}
-variable "external_alb" {}
+variable "acm" {}

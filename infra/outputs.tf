@@ -54,8 +54,8 @@ output "external_alb_sg_id" {
   value       = module.external_alb.sg_id
 }
 
-
+#
 output "acm_certificate_arn" {
   description = "The ARN of the ACM certificate"
-  value       = module.alb_acm.certificate_arn
+  value       = module.acm_certificates.certificate_arn
 }
