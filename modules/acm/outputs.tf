@@ -1,3 +1,3 @@
 output "certificate_arn" {
-  value = aws_acm_certificate.example.arn
+  value = aws_acm_certificate.this.arn
 }
