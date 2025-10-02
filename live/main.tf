@@ -18,6 +18,6 @@ module "acm_certificates" {
   project_name      = var.common_vars["application_name"]
   common_tags       = var.common_vars["common_tags"]
   zone_id           = var.common_vars["zone_id"]
-  domain_names       = var.lb_acm["domain_names"]
-  validation_method = var.lb_acm["validation_method"]
+  domain_names       = var.acm["domain_names"]
+  validation_method = var.acm["validation_method"]
 }
