@@ -44,7 +44,7 @@ sg = {
 }
 
 acm = {
-  domain_name       = ["dev-expense.ullagallu.in","dev-instana.ullagallu.in","dev-grafana.ullagallu.in","dev-kiali.ullagallu.in","dev-argocd.ullagallu.in"]
+  domain_names       = ["dev-expense.ullagallu.in","dev-instana.ullagallu.in","dev-grafana.ullagallu.in","dev-kiali.ullagallu.in","dev-argocd.ullagallu.in"]
   validation_method = "DNS"
 }
 
