@@ -1,3 +1,3 @@
-bucket = "konkas-ullagallu-s3"
+bucket = "ullagalliu-artifacts"
 key    = "development/tf-aws-eks-infra/terraform/state"
-region = "us-east-1"
+region = "ap-south-1"
