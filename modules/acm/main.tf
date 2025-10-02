@@ -65,10 +65,9 @@ resource "aws_acm_certificate" "this" {
 
 # Create Route53 validation records for each certificate
 resource "aws_route53_record" "this" {
-  # Flatten all domain validation options for all certificates
   for_each = {
     for cert in aws_acm_certificate.this :
-    cert.domain_name => cert.domain_validation_options[0]
+    cert.domain_name => tolist(cert.domain_validation_options)[0]
   }
 
   zone_id = var.zone_id
@@ -77,6 +76,7 @@ resource "aws_route53_record" "this" {
   records = [each.value.resource_record_value]
   ttl     = 60
 }
+
 
 # Validate ACM certificates
 resource "aws_acm_certificate_validation" "this" {
