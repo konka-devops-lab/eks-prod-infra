@@ -11,13 +11,3 @@ module "eks_vpc" {
   enable_nat_gateway         = var.vpc["enable_nat_gateway"]
   enable_vpc_flow_logs_cw    = var.vpc["enable_vpc_flow_logs_cw"]
 }
-
-module "acm_certificates" {
-  source            = "../modules/acm"
-  environment       = var.common_vars["environment"]
-  project_name      = var.common_vars["application_name"]
-  common_tags       = var.common_vars["common_tags"]
-  zone_id           = var.common_vars["zone_id"]
-  domain_names       = var.acm["domain_names"]
-  validation_method = var.acm["validation_method"]
-}
