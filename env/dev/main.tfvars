@@ -53,3 +53,10 @@ sg = {
     external_alb_sg_description = "Security Group for External ALB"
 }
 
+######################################################################################
+###############                   ACM Certificates                   #################
+######################################################################################
+acm = {
+    domain_names = ["dev-expense.ullagall.in", "dev-instana.ullagall.in","dev-grafana.ullagall.in", "dev-kibana.ullagall.in","dev-argocd.ullagall.in","dev-kibana.ullagall.in","dev-kiali.ullagall.in","dev-jaeger.ullagall.in"]
+    validation_method = "DNS"
+}
