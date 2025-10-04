@@ -53,3 +53,11 @@ output "external_alb_sg_id" {
   description = "Security Group ID for External ALB"
   value       = module.external_alb.sg_id
 }
+
+#################################################################
+###                     ACM Outputs                           ###
+#################################################################
+output "acm_certificate_arns" {
+  description = "The ARN of the ACM certificate"
+  value       = module.acm.certificate_arns
+}

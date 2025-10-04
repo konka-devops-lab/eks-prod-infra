@@ -27,3 +27,26 @@ module "acm" {
   validation_method = var.acm["validation_method"]
   zone_id          = var.common_vars["zone_id"]
 }
+
+######################################################################################
+###############                    EKS CLuster                       #################
+######################################################################################
+# module "eks_cluster" {
+#   source                     = "../modules/eks"
+#   environment = var.common_vars["environment"]
+#   project     = var.common_vars["application_name"]
+#   common_tags = var.common_vars["common_tags"]
+
+#   bootstrap_cluster_creator_admin_permissions = var.eks["bootstrap_cluster_creator_admin_permissions"]
+#   eks_version                                = var.eks["eks_version"]
+#   subnet_ids                                 = module.eks_vpc.public_subnet_ids
+#   security_group_ids                         = module.controlplane.sg_id
+#   endpoint_private_access                    = var.eks["endpoint_private_access"]
+#   endpoint_public_access                     = var.eks["endpoint_public_access"]
+#   public_access_cidrs                        = var.eks["public_access_cidrs"]
+#   node_groups                                = var.eks["node_groups"]
+#   node_group_security_group_ids              = [module.nodegroup.sg_id]
+#   node_subnet_ids = module.eks_vpc.public_subnet_ids
+#   addons = module.eks["addons"]
+#   eks_iam_access = var.eks["eks_iam_access"]
+# }
