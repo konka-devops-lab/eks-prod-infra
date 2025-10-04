@@ -57,6 +57,6 @@ sg = {
 ###############                   ACM Certificates                   #################
 ######################################################################################
 acm = {
-    domain_names = ["dev-expense.ullagall.in", "dev-instana.ullagall.in","dev-grafana.ullagall.in", "dev-kibana.ullagall.in","dev-argocd.ullagall.in","dev-kibana.ullagall.in","dev-kiali.ullagall.in","dev-jaeger.ullagall.in"]
+    domain_names = ["dev-expense.ullagallu.in", "dev-instana.ullagallu.in","dev-grafana.ullagallu.in", "dev-kibana.ullagallu.in","dev-argocd.ullagallu.in","dev-kiali.ullagallu.in","dev-jaeger.ullagallu.in"]
     validation_method = "DNS"
 }
