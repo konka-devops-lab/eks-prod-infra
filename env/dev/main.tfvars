@@ -1,3 +1,6 @@
+######################################################################################
+###############                    Common Variables                  #################
+######################################################################################
 aws_region = "ap-south-1"
 common_vars = {
   environment = "dev"
@@ -10,6 +13,9 @@ common_vars = {
   }
   zone_id = "Z03345832QRDQYLQ53NTN"
 }
+######################################################################################
+###############                      VPC                             #################
+######################################################################################
 vpc = {
     vpc_cidr_block = "10.1.0.0/16"
     availability_zone = ["ap-south-1a", "ap-south-1b"]
@@ -19,6 +25,10 @@ vpc = {
     enable_nat_gateway = false
     enable_vpc_flow_logs_cw = false
 }
+
+######################################################################################
+###############                   Security Group                     #################
+######################################################################################
 
 sg = {
     bastion_sg_name = "bastion"
@@ -41,10 +51,5 @@ sg = {
 
     external_alb_sg_name = "external_alb"
     external_alb_sg_description = "Security Group for External ALB"
-}
-
-acm = {
-  domain_names       = ["dev-expense.ullagallu.in","dev-instana.ullagallu.in","dev-grafana.ullagallu.in","dev-kiali.ullagallu.in","dev-argocd.ullagallu.in"]
-  validation_method = "DNS"
 }
 
