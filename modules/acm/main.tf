@@ -75,6 +75,9 @@ resource "aws_route53_record" "this" {
   type    = each.value.resource_record_type
   records = [each.value.resource_record_value]
   ttl     = 60
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 
