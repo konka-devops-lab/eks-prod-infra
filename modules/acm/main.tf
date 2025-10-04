@@ -78,12 +78,12 @@ resource "aws_route53_record" "this" {
 }
 
 
-# Validate ACM certificates
-resource "aws_acm_certificate_validation" "this" {
-  for_each = aws_acm_certificate.this
+# # Validate ACM certificates
+# resource "aws_acm_certificate_validation" "this" {
+#   for_each = aws_acm_certificate.this
 
-  certificate_arn = each.value.arn
-  validation_record_fqdns = [
-    aws_route53_record.this[each.key].fqdn
-  ]
-}
+#   certificate_arn = each.value.arn
+#   validation_record_fqdns = [
+#     aws_route53_record.this[each.key].fqdn
+#   ]
+# }
