@@ -6,5 +6,5 @@ variable "common_vars" {}
 variable "vpc" {}
 variable "sg" {}
 variable "acm" {}
-# variable "eks" {}
+variable "eks" {}
 
