@@ -13,6 +13,7 @@ resource "aws_eks_cluster" "example" {
 
   role_arn = aws_iam_role.cluster.arn
   version  = var.eks_version
+  enabled_cluster_log_types = var.enabled_cluster_log_types
 
   vpc_config {
     subnet_ids = var.subnet_ids
@@ -162,25 +163,25 @@ resource "aws_eks_node_group" "example" {
   ]
 }
 
-module addons {
-  depends_on = [ aws_eks_node_group.example ]
-  source = "./addons"
-  for_each = var.addons
-  cluster_name  = aws_eks_cluster.example.name
-  addon_name = each.key
-  addon_version = each.value
-}
+# module addons {
+#   depends_on = [ aws_eks_node_group.example ]
+#   source = "./addons"
+#   for_each = var.addons
+#   cluster_name  = aws_eks_cluster.example.name
+#   addon_name = each.key
+#   addon_version = each.value
+# }
 
-module "eks_iam_access" {
-  depends_on = [aws_eks_cluster.example]
-  source     = "./access_entry"
-  for_each   = var.eks_iam_access
+# module "eks_iam_access" {
+#   depends_on = [aws_eks_cluster.example]
+#   source     = "./access_entry"
+#   for_each   = var.eks_iam_access
 
-  cluster_name      = aws_eks_cluster.example.name
-  principal_arn     = each.value["principal_arn"]
-  policy_arn        = each.value["policy_arn"]
-  access_scope_type = lookup(each.value, "access_scope_type", "cluster")
-  kubernetes_groups = lookup(each.value, "kubernetes_groups", [])
+#   cluster_name      = aws_eks_cluster.example.name
+#   principal_arn     = each.value["principal_arn"]
+#   policy_arn        = each.value["policy_arn"]
+#   access_scope_type = lookup(each.value, "access_scope_type", "cluster")
+#   kubernetes_groups = lookup(each.value, "kubernetes_groups", [])
 
-  namespaces = lookup(each.value, "access_scope_type", "") == "namespace" ? lookup(each.value, "namespaces", []) : []
-}
+#   namespaces = lookup(each.value, "access_scope_type", "") == "namespace" ? lookup(each.value, "namespaces", []) : []
+# }

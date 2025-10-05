@@ -60,3 +60,24 @@ acm = {
     domain_names = ["dev-expense.ullagallu.in", "dev-instana.ullagallu.in","dev-grafana.ullagallu.in", "dev-kibana.ullagallu.in","dev-argocd.ullagallu.in","dev-kiali.ullagallu.in","dev-jaeger.ullagallu.in"]
     validation_method = "DNS"
 }
+
+######################################################################################
+###############                   EKS Cluster Parameters             #################
+######################################################################################
+eks = {
+    bootstrap_cluster_creator_admin_permissions = true
+    eks_version = "1.34"
+    endpoint_private_access = true
+    endpoint_public_access = true
+    public_access_cidrs = ["0.0.0.0/0"]
+    enabled_cluster_log_types = ["api", "audit", "authenticator", "controllerManager", "scheduler"]
+    node_groups = {
+        base = {
+            capacity_type = "ON_DEMAND"
+            instance_types = t3a.medium
+            desired_size = 2
+            max_size     = 2
+            min_size     = 2
+        }
+    }
+}

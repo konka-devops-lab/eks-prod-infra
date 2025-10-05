@@ -42,11 +42,14 @@ variable "public_access_cidrs" {
     description = "List of CIDRs allowed to access the EKS API endpoint"
     type        = list(string)
 }
-
+variable "enabled_cluster_log_types" {
+    description = "List of enabled control plane log types"
+    type        = list(string)
+    default     = []
+}
 # Launch Template Variables
-
 variable "node_groups" {}
 variable "node_group_security_group_ids" {}
 variable "node_subnet_ids" {}
-variable "addons" {}
-variable "eks_iam_access" {}
+# variable "addons" {}
+# variable "eks_iam_access" {}
