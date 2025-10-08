@@ -163,14 +163,14 @@ resource "aws_eks_node_group" "example" {
   ]
 }
 
-# module addons {
-#   depends_on = [ aws_eks_node_group.example ]
-#   source = "./addons"
-#   for_each = var.addons
-#   cluster_name  = aws_eks_cluster.example.name
-#   addon_name = each.key
-#   addon_version = each.value
-# }
+module addons {
+  depends_on = [ aws_eks_node_group.example ]
+  source = "./addons"
+  for_each = var.addons
+  cluster_name  = aws_eks_cluster.example.name
+  addon_name = each.key
+  addon_version = each.value
+}
 
 # module "eks_iam_access" {
 #   depends_on = [aws_eks_cluster.example]

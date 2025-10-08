@@ -80,4 +80,7 @@ eks = {
             min_size     = 2
         }
     }
+    addons = {
+        vpc-cni = "v1.20.3-eksbuild.1"
+    }
 }

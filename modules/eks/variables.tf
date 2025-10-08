@@ -51,5 +51,5 @@ variable "enabled_cluster_log_types" {
 variable "node_groups" {}
 variable "node_group_security_group_ids" {}
 variable "node_subnet_ids" {}
-# variable "addons" {}
+variable "addons" {}
 # variable "eks_iam_access" {}
