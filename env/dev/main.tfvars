@@ -66,7 +66,7 @@ acm = {
 ######################################################################################
 eks = {
     bootstrap_cluster_creator_admin_permissions = true
-    eks_version = "1.34"
+    eks_version = "1.33"
     endpoint_private_access = true
     endpoint_public_access = true
     public_access_cidrs = ["0.0.0.0/0"]
