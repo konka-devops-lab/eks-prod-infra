@@ -82,5 +82,9 @@ eks = {
     }
     addons = {
         vpc-cni = "v1.20.3-eksbuild.1"
+        metrics-server = "v0.8.0-eksbuild.2"
+        eks-pod-identity-agent = "v1.3.8-eksbuild.2"
+        aws-ebs-csi-driver    = "v1.49.0-eksbuild.1"
+        external-dns = "v0.19.0-eksbuild.2"
     }
 }
